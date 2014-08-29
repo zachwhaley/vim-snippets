@@ -70,23 +70,31 @@ snippet mu
 snippet cl
 	class ${1:`vim_snippets#Filename('$1', 'name')`}
 	{
+	///////////////
+	// Functions //
+	///////////////
 	public:
 		$1(${2});
 		~$1();
 
+	////////////////
+	// Attributes //
+	////////////////
 	private:
 		${0:/* data */}
 	};
 # member function implementation
 snippet mfun
-	${4:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3}) {
+	${4:void}
+	${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3})
+	{
 		${0}
 	}
 # namespace
 snippet ns
 	namespace ${1:`vim_snippets#Filename('', 'my')`} {
 		${0}
-	} /* namespace $1 */
+	} // namespace $1
 ##
 ## Input/Output
 # std::cout

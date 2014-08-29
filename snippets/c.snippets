@@ -41,13 +41,13 @@ snippet #if
 	#endif
 # header include guard
 snippet once
-	#ifndef ${1:`toupper(vim_snippets#Filename('$1_H', 'UNTITLED_H'))`}
+	#ifndef ${1:`toupper(vim_snippets#Filename('$1_HPP', 'UNTITLED_HPP'))`}
 
 	#define $1
 
 	${0}
 
-	#endif /* end of include guard: $1 */
+	#endif /* $1 */
 ##
 ## Control Statements
 # if
@@ -118,7 +118,8 @@ snippet do
 ## Functions
 # function definition
 snippet fun
-	${1:void} ${2:function_name}(${3})
+	${1:void}
+	${2:function_name}(${3})
 	{
 		${4}
 	}
