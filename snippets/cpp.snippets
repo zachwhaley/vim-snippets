@@ -70,18 +70,18 @@ snippet mu
 snippet cl
 	class ${1:`vim_snippets#Filename('$1', 'name')`}
 	{
-	///////////////
-	// Functions //
-	///////////////
-	public:
-		$1(${2});
-		~$1();
+		///////////////
+		// Functions //
+		///////////////
+		public:
+			$1(${2});
+			virtual ~$1();
 
-	////////////////
-	// Attributes //
-	////////////////
-	private:
-		${0:/* data */}
+		////////////////
+		// Attributes //
+		////////////////
+		private:
+			${0:/* data */}
 	};
 # member function implementation
 snippet mfun
