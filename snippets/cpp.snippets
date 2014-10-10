@@ -86,19 +86,31 @@ snippet mu
 snippet cl
 	class ${1:`vim_snippets#Filename('$1', 'name')`}
 	{
-		///////////////
-		// Functions //
-		///////////////
-		public:
-			$1(${2});
-			virtual ~$1();
+	///////////////
+	// Functions //
+	///////////////
+	public:
+		$1(${2});
+		virtual ~$1();
 
-		////////////////
-		// Attributes //
-		////////////////
-		private:
-			${0:/* data */}
+	////////////////
+	// Attributes //
+	////////////////
+	private:
+
 	};
+# constructor
+snippet con
+	${1:`vim_snippets#Filename('$1', 'ClassName')`}::$1(${2})
+	{
+		${0}
+	}
+# destructor
+snippet des
+	${1:`vim_snippets#Filename('$1', 'ClassName')`}::~$1(${2})
+	{
+		${0}
+	}
 # member function implementation
 snippet mfun
 	${4:void}
