@@ -16,11 +16,11 @@ snippet mainn
 ##
 ## Preprocessor
 # #include <...>
-snippet inc
+snippet inh
 	#include <${1:stdio}.h>
 # #include "..."
-snippet Inc
-	#include "${1:`vim_snippets#Filename("$1.h")`}"
+snippet Inh
+	#include "${1:`vim_snippets#Filename("$1")`}.h"
 # ifndef...define...endif
 snippet ndef
 	#ifndef $1
@@ -41,13 +41,12 @@ snippet #if
 	#endif
 # header include guard
 snippet once
-	#ifndef ${1:`toupper(vim_snippets#Filename('$1_HPP', 'UNTITLED_HPP'))`}
-
-	#define $1
+	#ifndef __${1:`toupper(vim_snippets#Filename('$1', 'ZACHW'))`}_H__
+	#define __$1_H__
 
 	${0}
 
-	#endif /* $1 */
+	#endif /* __$1_H__ */
 ##
 ## Control Statements
 # if

@@ -1,3 +1,19 @@
+##
+## Preprocessor
+# #include <...>
+snippet inc
+	#include <${1:iostream}>
+# #include "..."
+snippet Inc
+	#include "${1:`vim_snippets#Filename("$1")`}.hpp"
+# header include guard
+snippet once
+	#ifndef __${1:`toupper(vim_snippets#Filename('$1', 'ZACHW'))`}_HPP__
+	#define __$1_HPP__
+
+	${0}
+
+	#endif /* __$1_HPP__ */
 ## STL Collections
 # std::array
 snippet array
