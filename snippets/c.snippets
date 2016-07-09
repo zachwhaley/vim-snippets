@@ -16,10 +16,10 @@ snippet mainn
 ##
 ## Preprocessor
 # #include <...>
-snippet inh
+snippet inc
 	#include <${1:stdio}.h>
 # #include "..."
-snippet Inh
+snippet Inc
 	#include "${1:`vim_snippets#Filename("$1")`}.h"
 # ifndef...define...endif
 snippet ndef
@@ -228,7 +228,7 @@ snippet .
 	[${1}]
 # Cisco copyright
 snippet cisco
-	/*!
+	/*
 	 * @file `expand('%:t')`
 	 *
 	 * @brief ${1}
