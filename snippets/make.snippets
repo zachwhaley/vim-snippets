@@ -48,3 +48,12 @@ snippet help
 	help: ## Prints help for targets with comments
 		@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $\$1, $\$2}'
 	${0}
+# Cisco copyright
+snippet cisco
+	#
+	# Copyright (c) `strftime("%Y")` by Cisco Systems, Inc.
+	# All rights reserved.
+	# Unauthorized redistribution prohibited.
+	#
+
+	${0}
