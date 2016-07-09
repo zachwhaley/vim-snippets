@@ -16,18 +16,8 @@ snippet cl "class .. (class)"
 class ${1:`!p snip.rv = snip.basename or "name"`}
 {
 public:
-	/* Constructor */
-	${1/(\w+).*/$1/}(${2:arguments});
-	/* Copy Constructor */
-	${1/(\w+).*/$1/}(const ${1/(\w+).*/$1/} &) = default;
-	/* Move Constructor */
-	${1/(\w+).*/$1/}(${1/(\w+).*/$1/} &&) = default;
-	/* Copy Assignment Operator */
-	${1/(\w+).*/$1/}& operator=(const ${1/(\w+).*/$1/} &) = default;
-	/* Move Assignment Operator */
-	${1/(\w+).*/$1/}& operator=(${1/(\w+).*/$1/} &&) = default;
-	/* Destructor */
-	${3:virtual }~${1/(\w+).*/$1/}() = default;
+	${1/(\w+).*/$1/} (${2:arguments});
+	virtual ~${1/(\w+).*/$1/} ();
 
 private:
 	${0:/* data */}
