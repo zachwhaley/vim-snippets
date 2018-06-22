@@ -163,6 +163,12 @@ snippet ns
 	${0}
 
 	} // namespace $1
+snippet ans
+	namespace {
+
+	${0}
+
+	} // namespace
 # using namespace
 snippet use
 	using namespace ${1:std};
@@ -228,3 +234,8 @@ snippet try
 	}catch(${1}) {
 		
 	}
+snippet af auto function
+	auto ${1:name}(${2}) -> ${3:void}
+	{
+		${0}
+	};
