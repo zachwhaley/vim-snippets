@@ -41,12 +41,8 @@ snippet #if
 	#endif
 # header include guard
 snippet once
-	#ifndef __${1:`toupper(vim_snippets#Filename('$1', 'ZACHW'))`}_H__
-	#define __$1_H__
-
+	#pragma once
 	${0}
-
-	#endif /* __$1_H__ */
 ##
 ## Control Statements
 # if
@@ -333,16 +329,15 @@ snippet todo
 # This is kind of convenient
 snippet .
 	[${1}]
-# Cisco copyright
-snippet cisco
+# Copyright
+snippet trend
 	/*
 	 * @file `expand('%:t')`
 	 *
 	 * @brief ${1}
 	 *
-	 * Copyright (c) `strftime("%Y")` by Cisco Systems, Inc.
+	 * Copyright (c) `strftime("%Y")` by Trend Micro, Inc.
 	 * All rights reserved.
 	 * Unauthorized redistribution prohibited.
 	 */
-
 	${0}

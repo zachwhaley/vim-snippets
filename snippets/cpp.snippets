@@ -10,14 +10,6 @@ snippet hdrc
 # #include boost
 snippet binc
 	#include <boost/${1:shared_ptr}.hpp>
-# header include guard
-snippet once
-	#ifndef __${1:`toupper(vim_snippets#Filename('$1', 'ZACHW'))`}_HPP__
-	#define __$1_HPP__
-
-	${0}
-
-	#endif /* __$1_HPP__ */
 ##
 ## STL Collections
 # std::array
