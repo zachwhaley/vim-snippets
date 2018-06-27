@@ -1,13 +1,12 @@
 extends c
 
+##
 ## Preprocessor
 # #include <...>
 snippet incc
 	#include <${1:string}>
-# #include "..."
-snippet hdrc
-	#include "${1:`vim_snippets#Filename("$1")`}.hpp"
-# #include boost
+snippet Incc
+	#include "${1:`vim_snippets#Filename("$1.hpp")`}"
 snippet binc
 	#include <boost/${1:shared_ptr}.hpp>
 ##
@@ -88,36 +87,13 @@ snippet cl
 	 */
 	class ${1:`vim_snippets#Filename('$1', 'name')`}
 	{
-	///////////////
-	// Functions //
-	///////////////
 	public:
 		$1(${2});
 		virtual ~$1();
-
-	////////////////
-	// Attributes //
-	////////////////
-	private:
-
 	};
-# constructor
-snippet con
-	${1:`vim_snippets#Filename('$1', 'ClassName')`}::$1(${2})
-	{
-		${0}
-	}
-# destructor
-snippet des
-	${1:`vim_snippets#Filename('$1', 'ClassName')`}::~$1(${2})
-	{
-		${0}
-	}
 # member function implementation
 snippet mfun
-	${4:void}
-	${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3})
-	{
+	${4:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3}) {
 		${0}
 	}
 # member function implementation without parameters
@@ -159,19 +135,15 @@ snippet dmfun2
 # namespace
 snippet ns
 	namespace ${1:`vim_snippets#Filename('', 'my')`} {
-
-	${0}
-
-	} // namespace $1
+		${0}
+	} /* namespace $1 */
 snippet ans
 	namespace {
-
-	${0}
-
-	} // namespace
+		${0}
+	}
 # using namespace
 snippet use
-	using namespace ${1:std};
+	using namespace ${0:std};
 ##
 ## Input/Output
 # std::cout
@@ -230,9 +202,9 @@ snippet lld
 # snippets exception
 snippet try
 	try {
-		
-	}catch(${1}) {
-		
+
+	} catch(${1}) {
+
 	}
 snippet af auto function
 	auto ${1:name}(${2}) -> ${3:void}

@@ -19,8 +19,8 @@ snippet mainn
 snippet inc
 	#include <${1:stdio}.h>
 # #include "..."
-snippet hdr
-	#include "${1:`vim_snippets#Filename("$1")`}.h"
+snippet Inc
+	#include "${1:`vim_snippets#Filename("$1.h")`}"
 # ifndef...define...endif
 snippet ndef
 	#ifndef $1
@@ -40,6 +40,15 @@ snippet #if
 		${0:${VISUAL}}
 	#endif
 # header include guard
+snippet guard
+	#ifndef ${1:`toupper(vim_snippets#Filename('$1_H', 'UNTITLED_H'))`}
+
+	#define $1
+
+	${0}
+
+	#endif /* end of include guard: $1 */
+# header pragma guard
 snippet once
 	#pragma once
 
@@ -133,8 +142,7 @@ snippet do
 ## Functions
 # function definition
 snippet fun
-	${1:void}
-	${2:function_name}(${3})
+	${1:void} ${2:function_name}(${3})
 	{
 		${4}
 	}
